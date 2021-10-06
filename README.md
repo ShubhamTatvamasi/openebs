@@ -1,11 +1,14 @@
 # openebs
 
-https://openebs.io/docs/user-guides/localpv-hostpath
+https://openebs.io/docs/user-guides/localpv-hostpath \
+https://openebs.io/docs/user-guides/localpv-hostpath#prerequisites
 
-Verify iSCSI initiator is installed
-```bash
-sudo apt install -y open-iscsi
-sudo systemctl enable --now iscsid
+If you are using the Rancher RKE cluster, you must configure kubelet service with extra_binds for BasePath. If your BasePath is the default directory /var/openebs/local, then extra_binds section should have the following details:
+```yaml
+services:
+  kubelet:
+    extra_binds:
+      - /var/openebs/local:/var/openebs/local
 ```
 
 Install openebs with chart name as openebs:
