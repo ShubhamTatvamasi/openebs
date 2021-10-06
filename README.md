@@ -21,3 +21,9 @@ helm install openebs openebs/openebs \
   --namespace openebs
 ```
 
+set default storage class:
+```bash
+kubectl patch storageclass openebs-hostpath \
+  --patch='{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
