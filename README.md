@@ -39,7 +39,7 @@ echo iscsi_tcp >/etc/modules-load.d/iscsi-tcp.conf
 
 Verify iSCSI Status:
 ```bash
-sudo systemctl status iscsid.service
+sudo systemctl status iscsid
 ```
 
 
