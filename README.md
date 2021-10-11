@@ -77,6 +77,12 @@ parameters:
 EOF
 ```
 
+Set `openebs-jiva-csi-sc` as default storage class:
+```bash
+kubectl patch storageclass openebs-jiva-csi-sc \
+  --patch='{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
 https://github.com/openebs/jiva-operator/blob/develop/docs/quickstart.md
 
 
