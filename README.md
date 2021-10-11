@@ -47,6 +47,21 @@ Install Jiva Operator:
 kubectl apply -f https://openebs.github.io/charts/jiva-operator.yaml
 ```
 
+Create replication Jiva volume policy:
+```yaml
+kubectl create -f - << EOF
+apiVersion: openebs.io/v1alpha1
+kind: JivaVolumePolicy
+metadata:
+  name: replication-jivavolumepolicy
+  namespace: openebs
+spec:
+  replicaSC: openebs-hostpath
+  target:
+    replicationFactor: 1
+EOF
+```
+
 https://github.com/openebs/jiva-operator/blob/develop/docs/quickstart.md
 
 
