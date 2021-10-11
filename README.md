@@ -27,3 +27,22 @@ kubectl patch storageclass openebs-hostpath \
   --patch='{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
+### Replicated Volumes
+
+Install iSCSI on all hosts:
+```bash
+sudo apt install open-iscsi
+sudo systemctl enable --now iscsid
+modprobe iscsi_tcp
+echo iscsi_tcp >/etc/modules-load.d/iscsi-tcp.conf
+```
+
+Verify iSCSI Status:
+```bash
+sudo systemctl status iscsid.service
+```
+
+
+https://github.com/openebs/jiva-operator/blob/develop/docs/quickstart.md
+
+
