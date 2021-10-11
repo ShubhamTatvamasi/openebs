@@ -62,6 +62,21 @@ spec:
 EOF
 ```
 
+Create a Storage Class to dynamically provision volumes by specifying above policy:
+```bash
+kubectl create -f - << EOF
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: openebs-jiva-csi-sc
+provisioner: jiva.csi.openebs.io
+allowVolumeExpansion: true
+parameters:
+  cas-type: "jiva"
+  policy: "replication-jivavolumepolicy"
+EOF
+```
+
 https://github.com/openebs/jiva-operator/blob/develop/docs/quickstart.md
 
 
