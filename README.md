@@ -61,6 +61,7 @@ spec:
     replicationFactor: 3
 EOF
 ```
+> Update your `replicationFactor` as per your nodes.
 
 Create a Storage Class to dynamically provision volumes by specifying above policy:
 ```yaml
