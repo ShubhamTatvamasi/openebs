@@ -42,6 +42,10 @@ Verify iSCSI Status:
 sudo systemctl status iscsid
 ```
 
+Install Jiva Operator:
+```bash
+kubectl apply -f https://openebs.github.io/charts/jiva-operator.yaml
+```
 
 https://github.com/openebs/jiva-operator/blob/develop/docs/quickstart.md
 
