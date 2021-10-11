@@ -63,7 +63,7 @@ EOF
 ```
 
 Create a Storage Class to dynamically provision volumes by specifying above policy:
-```bash
+```yaml
 kubectl create -f - << EOF
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
