@@ -16,9 +16,10 @@ Install openebs with chart name as openebs:
 helm repo add openebs https://openebs.github.io/charts
 helm repo update
 
-helm install openebs openebs/openebs \
+helm upgrade -i openebs openebs/openebs \
   --create-namespace \
-  --namespace openebs
+  --namespace openebs \
+  --set cstor.enabled=true
 ```
 
 set default storage class:
