@@ -28,6 +28,28 @@ kubectl patch storageclass openebs-hostpath \
   --patch='{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
+
+create cstor storage class:
+```yaml
+kubectl create -f - << EOF
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: openebs-cstor-perf
+  annotations:
+    cas.openebs.io/config: |
+      - name: StoragePoolClaim
+        value: "cstor-sparse-pool"
+      - name: ReplicaCount
+        value: "3"
+    openebs.io/cas-type: cstor
+  name: openebs-cstor-pool-sts
+provisioner: openebs.io/provisioner-iscsi
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+EOF
+```
+
 ### Replicated Volumes
 
 Install iSCSI on all hosts:
