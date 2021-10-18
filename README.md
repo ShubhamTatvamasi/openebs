@@ -54,10 +54,10 @@ EOF
 
 Install iSCSI on all hosts:
 ```bash
-sudo apt install open-iscsi
+sudo apt install open-iscsi -y
 sudo systemctl enable --now iscsid
-modprobe iscsi_tcp
-echo iscsi_tcp >/etc/modules-load.d/iscsi-tcp.conf
+# modprobe iscsi_tcp
+# echo iscsi_tcp >/etc/modules-load.d/iscsi-tcp.conf
 ```
 
 Verify iSCSI Status:
