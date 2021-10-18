@@ -23,6 +23,7 @@ helm repo update
 helm upgrade -i openebs openebs/openebs \
   --create-namespace \
   --namespace openebs \
+  --set jiva.enabled=true \
   --set cstor.enabled=true
 ```
 
