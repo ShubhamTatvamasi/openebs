@@ -22,7 +22,7 @@ helm upgrade -i openebs openebs/openebs \
   --set cstor.enabled=true
 ```
 
-set default storage class:
+set `openebs-hostpath` as default storage class:
 ```bash
 kubectl patch storageclass openebs-hostpath \
   --patch='{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
