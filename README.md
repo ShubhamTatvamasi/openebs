@@ -42,12 +42,13 @@ kind: StorageClass
 metadata:
   name: openebs-cstor-perf
   annotations:
+    storageclass.kubernetes.io/is-default-class: true
+    openebs.io/cas-type: cstor
     cas.openebs.io/config: |
       - name: StoragePoolClaim
         value: "cstor-sparse-pool"
       - name: ReplicaCount
         value: "3"
-    openebs.io/cas-type: cstor
   name: openebs-cstor-pool-sts
 provisioner: openebs.io/provisioner-iscsi
 reclaimPolicy: Delete
