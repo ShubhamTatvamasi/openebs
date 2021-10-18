@@ -9,6 +9,10 @@ services:
   kubelet:
     extra_binds:
       - /var/openebs/local:/var/openebs/local
+      - /etc/iscsi:/etc/iscsi
+      - /sbin/iscsiadm:/sbin/iscsiadm
+      - /var/lib/iscsi:/var/lib/iscsi
+      - /lib/modules
 ```
 
 Install openebs with chart name as openebs:
