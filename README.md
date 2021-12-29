@@ -14,6 +14,9 @@ services:
       - /var/lib/iscsi:/var/lib/iscsi
       - /lib/modules
 ```
+```bash
+yq e '.services.kubelet.extra_binds[0] = "/var/openebs/local:/var/openebs/local"' -i cluster.yml
+```
 
 Install openebs with chart name as openebs:
 ```bash
