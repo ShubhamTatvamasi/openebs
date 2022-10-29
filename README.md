@@ -26,6 +26,7 @@ helm repo update
 helm upgrade -i openebs openebs/openebs \
   --create-namespace \
   --namespace openebs \
+  --set localprovisioner.basePath="/var/data/openebs/local" \
   --set jiva.enabled=true \
   --set cstor.enabled=true
 ```
