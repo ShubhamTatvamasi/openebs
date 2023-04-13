@@ -27,6 +27,7 @@ helm upgrade -i openebs openebs/openebs \
   --create-namespace \
   --namespace openebs \
   --set localprovisioner.basePath="/var/data/openebs/local" \
+  --set localprovisioner.hostpathClass.isDefaultClass=true \
   --set jiva.enabled=true \
   --set cstor.enabled=true
 ```
