@@ -1,5 +1,27 @@
 # openebs
 
+Add OpenEBS Helm Repo:
+```bash
+helm repo add openebs https://openebs.github.io/openebs
+helm repo update
+```
+
+Install OpenEBS:
+```bash
+helm upgrade --install openebs openebs/openebs \
+  --namespace openebs \
+  --create-namespace \
+  --set openebs-crds.csi.volumeSnapshots.enabled=false \
+  --set alloy.enabled=false \
+  --set loki.enabled=false \
+  --set localpv-provisioner.hostpathClass.isDefaultClass=true \
+  --set engines.local.lvm.enabled=false \
+  --set engines.local.zfs.enabled=false \
+  --set engines.replicated.mayastor.enabled=false
+```
+
+---
+
 https://openebs.io/docs/user-guides/localpv-hostpath \
 https://openebs.io/docs/user-guides/localpv-hostpath#prerequisites
 
