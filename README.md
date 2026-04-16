@@ -9,6 +9,7 @@ helm repo update
 Install OpenEBS:
 ```bash
 helm upgrade --install openebs openebs/openebs \
+  --version 4.4.0 \
   --namespace openebs \
   --create-namespace \
   --set openebs-crds.csi.volumeSnapshots.enabled=false \
